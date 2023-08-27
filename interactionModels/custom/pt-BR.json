@@ -1,0 +1,355 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "peso",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isGreaterThan",
+                  "prompt": "Slot.Validation.322354693342.425626881225.1457372168203",
+                  "value": "30"
+                },
+                {
+                  "type": "isLessThan",
+                  "prompt": "Slot.Validation.322354693342.425626881225.590955657315",
+                  "value": "180"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1252520446150.512131323171"
+              }
+            },
+            {
+              "name": "metro",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1144367375227.472199605029"
+              }
+            },
+            {
+              "name": "centimetros",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1252520446150.1121183326984"
+              }
+            }
+          ],
+          "name": "IMCIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1466921006613"
+          }
+        },
+        {
+          "slots": [
+            {
+              "name": "nome",
+              "elicitationRequired": true,
+              "type": "AMAZON.FirstName",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.454130302752.402287704313"
+              }
+            }
+          ],
+          "name": "NomeIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.898904807909"
+          }
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "Cancelar "
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "Ajude-me",
+            "me ajuda",
+            "Preciso de ajuda",
+            "Estou com dificuldades",
+            "Me ajude"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "Parar",
+            "Parar execução",
+            "Parar Saúde Para Todos"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "DicasIntent",
+          "samples": [
+            "Quero dicas de saude",
+            "dicas",
+            "dicas de saude",
+            "Dicas de Saúde"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+            "Inicio",
+            "Navegar para o Inicio"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "AvaliacaoIntent",
+          "samples": [
+            "quero avaliação",
+            "quero uma avaliação",
+            "avaliação ",
+            "avaliar minha saúde",
+            "avaliação de saude",
+            "avaliação de saúde"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "peso",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "peso {peso} quilos",
+                "peso {peso}",
+                "tenho {peso} quilos",
+                "Meu peso é de {peso} quilos"
+              ]
+            },
+            {
+              "name": "metro",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{metro} metro e {centimetros} centimetros de altura.",
+                " {metro} metro e {centimetros} centimetros",
+                "tenho {metro} metro e {centimetros} centimetros de altura.",
+                "tenho {metro} metro e {centimetros} centimetros.",
+                "{metro} metro e {centimetros} centimetros.",
+                "eu tenho {metro} metro e {centimetros} centimetros de altura."
+              ]
+            },
+            {
+              "name": "centimetros",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{metro} metro e {centimetros} centimetros de altura.",
+                "eu tenho {metro} metro e {centimetros} centimetros de altura.",
+                "eu tenho {metro} metro e {centimetros} centimetros ",
+                "{metro} metro e {centimetros} centimetros.",
+                "tenho {metro} metro e {centimetros} centimetros."
+              ]
+            }
+          ],
+          "name": "IMCIntent",
+          "samples": [
+            "Tenho {metro} e {centimetros}",
+            "{metro} e {centimetros}",
+            "Eu peso {peso} quilogramas",
+            "{peso} quilogramas",
+            "{peso}",
+            " {metro} metro e {centimetros} centímetros",
+            "{peso} kilos",
+            "{peso} quilos",
+            "{peso} quilos e {metro} metro e {centimetros} centímetros",
+            "peso {peso} quilos e tenho {metro} metro e {centimetros} centímetros de altura",
+            "peso {peso} quilos e {metro} metro e {centimetros} de altura",
+            "peso {peso} quilos e {metro} metro e {centimetros} centimetros de altura",
+            "tenho {peso} quilos e {metro} metro e {centimetros} centimetros de altura"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "nome",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "Eu me chamo {nome}",
+                "Me chamo {nome}",
+                "{nome}",
+                "Meu nome é {nome}"
+              ]
+            }
+          ],
+          "name": "NomeIntent",
+          "samples": [
+            "{nome} é o meu nome",
+            "{nome}",
+            "Me chamo {nome}",
+            "Eu me chamo {nome}",
+            "Meu nome é {nome}"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "saude para todos"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "O Valor não foi aceito. por favor, informe um valor acima de trinta quilos"
+          }
+        ],
+        "id": "Slot.Validation.322354693342.425626881225.1457372168203"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Insira um valor abaixo de cento e oitenta quilos. "
+          }
+        ],
+        "id": "Slot.Validation.322354693342.425626881225.590955657315"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Otimo. O seu peso é {peso} quilos."
+          }
+        ],
+        "id": "Confirm.Slot.1144367375227.196645554386"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "por favor, me informe sua altura."
+          }
+        ],
+        "id": "Elicit.Slot.1144367375227.472199605029"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ok. Você possui {metro} metro e {centimetros} centimetros de altura."
+          }
+        ],
+        "id": "Confirm.Slot.1144367375227.472199605029"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Entendi. sua altura é de {metro} e {centimetros} centimetros de altura"
+          }
+        ],
+        "id": "Confirm.Slot.1144367375227.910347741230"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "por favor, fale a sua altura"
+          }
+        ],
+        "id": "Elicit.Slot.1252520446150.1121183326984"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "por favor, me fale o seu peso."
+          }
+        ],
+        "id": "Elicit.Slot.1252520446150.512131323171"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Seu peso é {peso} quilos?"
+          }
+        ],
+        "id": "Confirm.Slot.940212467356.294876449446"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "ok. sua altura é {metro} e {centimetros} centimetros ?"
+          }
+        ],
+        "id": "Confirm.Slot.940212467356.833438690024"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "ok. sua altura é {metro} e {centimetros} centimetros ?"
+          }
+        ],
+        "id": "Confirm.Slot.940212467356.351319915598"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Seu peso é {peso} quilos e sua altura é {metro} metro e {centimetros} centimetros de altura?"
+          }
+        ],
+        "id": "Confirm.Intent.1466921006613"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Confirmando. O seu nome é {nome} ?"
+          }
+        ],
+        "id": "Confirm.Intent.1109778025287"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Por favor, me fale o seu nome"
+          }
+        ],
+        "id": "Elicit.Slot.454130302752.402287704313"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "O Seu nome é {nome} ?"
+          }
+        ],
+        "id": "Confirm.Slot.1431209844687.250887846612"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Confirmando. O seu nome é {nome} ?"
+          }
+        ],
+        "id": "Confirm.Intent.898904807909"
+      }
+    ]
+  }
+}
